@@ -1,0 +1,55 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Html To Plaintext Parser"
+  },
+  "basePath": "/api/",
+  "paths": {
+    "/HtmlPlainText": {
+      "post": {
+        "operationId": "Html To Plain Text",
+        "summary": "Parse HTML to Plaintext",
+        "consumes": [ "text/plain" ],
+        "produces": [
+          "text/plain"
+        ],
+        "parameters": [
+          {
+            "name": "html",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "x-ms-summary": "HTML body"
+          },
+          {
+            "name": "multiline",
+            "in": "query",
+            "required": true,
+            "type": "boolean",
+            "x-ms-summary": "Return multiline"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "string",
+              "x-ms-summary": "Plain Text",
+              "description": "The parsed plain text"
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "definitions": {
+
+  },
+  "securityDefinitions": {
+
+  }
+}
